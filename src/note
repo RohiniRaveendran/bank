@@ -1,0 +1,34 @@
+
+
+
+
+
+
+                Angular- front end technology
+
+                    Basic commands
+
+1. create a project - ng new project-name
+
+2. to run Angular project- ng serve
+
+3. to generate component - ng g c component - name
+
+
+
+                    Basic concepts
+
+1. MODULE - to import libraries - root module -AppModule
+
+2.Components - to generate ts,html,css,root component - AppComponent
+
+3. Data Binding - sharing data within a component
+   
+    3.1 One way binding - only single direction sharing
+        3.1.1 Component(ts file) to view(html)
+            3.1.1.1 String Interpolation - {{variable-name}}
+            3.1.1.2 Property Binding - [tag-attribute] = "class-property"
+        
+        3.1.2 View to Component
+            3.1.2.1 Event Binding - (event-name)="function-call"
+            3.1.2.2 Event Binding using $event - (event-name)="function-call"
