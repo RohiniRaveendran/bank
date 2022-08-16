@@ -37,10 +37,10 @@ pswd=""
   }
 
 
-login(){
- var acno=this.acno
+login(a:any,p:any){
+ var acno=a.value
  console.log(acno);
- var pswd=this.pswd
+ var pswd=p.value
  console.log(pswd);
  let userdetails=this.database
  if(acno in userdetails){

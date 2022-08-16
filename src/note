@@ -32,3 +32,4 @@
         3.1.2 View to Component
             3.1.2.1 Event Binding - (event-name)="function-call"
             3.1.2.2 Event Binding using $event - (event-name)="function-call"
+            3.1.2.2 Template Referenncing variable: Syntax:- #variable-name

@@ -2,9 +2,12 @@
     <h1>{{header}}</h1>
 <div id="div1">
     <h1><b><i>login</i></b></h1><br><br>
-    <input (change)="acnochange($event)" type="text" id="account" [placeholder]="accplaceholder"><br><br>
-    <input (change)="pwdchange($event)" type="password" id="pwd" placeholder="password"><br><br>
-    <button (click)="login()">login</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input #acno type="text" id="account" [placeholder]="accplaceholder"><br><br>
+    <!--#acno = (change)="acnochange($event)"-->
+    <input #pswd type="password" id="pwd" placeholder="password"><br><br>
+    <!-- #pswd = (change)="pwdchange($event)"-->
+    <button (click)="login(acno,pswd)">login</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- login(acno,pswd) -->
     <button>reset</button><br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new user?<a href="">register</a>
 
