@@ -1,15 +1,24 @@
-<form name="myform" method="post" >
+<form [formGroup]="loginform" name="myform" method="post" (ngSubmit)="login()">
     <h1>{{header}}</h1>
 <div id="div1">
     <h1><b><i>login</i></b></h1><br><br>
-    <input #acno type="text" id="account" [placeholder]="accplaceholder"><br><br>
-    <!--#acno = (change)="acnochange($event)"-->
-    <input #pswd type="password" id="pwd" placeholder="password"><br><br>
-    <!-- #pswd = (change)="pwdchange($event)"-->
-    <button (click)="login(acno,pswd)">login</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <!-- login(acno,pswd) -->
+    <input formControlName="acno" [(ngModel)]= "acno" type="text" name="acno" [placeholder]="accplaceholder"><br>
+    <div *ngIf="this.loginform.get('acno')?.touched&&this.loginform.get('acno')?.errors"
+style="color:red ;">
+    Invalid Account number
+</div><br>
+    
+  
+    <input formControlName="pswd" [(ngModel)] ="pswd" type="password" name="pswd" placeholder="password"><br>
+    <div *ngIf="this.loginform.get('pswd')?.touched&&this.loginform.get('pswd')?.errors"
+style="color:red ;">
+    Invalid Password
+</div><br>
+   
+    <button type="submit">login</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
     <button>reset</button><br><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new user?<a href="">register</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new user?<a href="register">register</a>
 
 
 </div>

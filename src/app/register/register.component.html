@@ -1,0 +1,30 @@
+<form [formGroup]="registerForm" name="myform" method="post"(ngSubmit)="register()" >
+    <h1></h1>
+<div id="div1">
+    <h1><b><i>Register</i></b></h1><br><br>
+    <input formControlName="uname" name="uname" type="text" id="account" placeholder="accplaceholder"><br>
+    <div *ngIf="this.registerForm.get('uname')?.touched&&this.registerForm.get('uname')?.errors"
+    style="color:red ;">
+        Invalid username
+    </div><br>
+    <!--#acno = (change)="acnochange($event)"-->
+    <!-- #accno - template reference model -->
+    <input formControlName="acno" name="acno" type="password" id="pwd" placeholder="accountno"><br>
+    <div *ngIf="this.registerForm.get('acno')?.touched&&this.registerForm.get('acno')?.errors"
+    style="color:red ;">
+        Invalid Account number
+    </div><br>
+    <!-- #pswd = (change)="pwdchange($event)"-->
+    <input formControlName="pswd" name="pswd" type="password" id="pwd" placeholder="password"><br>
+    <div *ngIf="this.registerForm.get('pswd')?.touched&&this.registerForm.get('pswd')?.errors"
+    style="color:red ;">
+        Invalid Password
+    </div><br>
+    <button type="submit">Register</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- login(acno,pswd) -->
+    <button>reset</button><br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Already user?<a routerLink="">login</a>
+
+
+</div>
+</form>

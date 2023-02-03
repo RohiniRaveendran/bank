@@ -1,12 +1,8 @@
 
 
+                Angular- Front End Technology
 
-
-
-
-                Angular- front end technology
-
-                    Basic commands
+                    BASIC COMMANDS
 
 1. create a project - ng new project-name
 
@@ -14,22 +10,68 @@
 
 3. to generate component - ng g c component - name
 
+4. to create service - ng g s service-name
 
 
-                    Basic concepts
+                    BASIC CONCEPTS
 
 1. MODULE - to import libraries - root module -AppModule
 
-2.Components - to generate ts,html,css,root component - AppComponent
+2. Components - to generate ts,html,css,root component - AppComponent
 
 3. Data Binding - sharing data within a component
    
     3.1 One way binding - only single direction sharing
+       
         3.1.1 Component(ts file) to view(html)
+            
             3.1.1.1 String Interpolation - {{variable-name}}
+            
             3.1.1.2 Property Binding - [tag-attribute] = "class-property"
         
         3.1.2 View to Component
+           
             3.1.2.1 Event Binding - (event-name)="function-call"
+           
             3.1.2.2 Event Binding using $event - (event-name)="function-call"
-            3.1.2.2 Template Referenncing variable: Syntax:- #variable-name
+           
+            3.1.2.3 Template Referenncing variable: Syntax:- #variable-name
+       
+    3.2 Two way binding - same time data sharing in both directions
+      
+        3.2.1 FormsModule - Import in AppModule
+                
+                ngModel - Syntax : [(ngModel)]="variable-name" - set name attribute if it used inside from tag
+
+4. Component Path set up,router-outlet selector
+
+5. Dependency Injection - inside constructor of a class
+
+6. Angular Service
+
+7. ngSubmit
+
+8. Angular forms
+    
+    8.1 Template Driven Form
+    
+    8.2 Model Driven Form - ReactiveForms - Import ReactiveFormsModule
+    (form group , form array , form control)
+
+9. Directives - DOM Manipulations
+   
+    9.1 Component Directives
+
+    9.2 Structural Directives - prifixed with a symbol *
+
+        9.2.1 *ngIf 
+
+        9.2.1 *ngFor
+
+    9.3 Attribute Directives - ngClass
+
+10 . Parent Child communication
+
+    10.1 Parent-Child - @Input()
+
+    10.2 Child-Parent - @Output()

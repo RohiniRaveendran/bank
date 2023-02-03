@@ -1,0 +1,84 @@
+<div class="m-5">
+<h1>Welcome {{user}}</h1>
+<button (click)="logout()" style="float: right;" class="btn btn-warning">Log Out</button>
+</div>
+<div class="m-5">
+<a routerLink="/transaction">Transaction History</a>
+<br>
+<button (click)="deleteAcc()" style="float: right;" class="btn btn-danger">Delete Account</button>
+</div>
+<!-- child selector-->
+<app-delete-confirm (onDelete)="delete($event)" (onCancel)="cancel()" [item]="acno"></app-delete-confirm>
+
+<div class="row">
+    <div class="col-6">
+        <div [ngClass]="acno?'c1':'' " class="border container w-50 m-5">
+            <h2 class="text-center text-primary">Deposit <form action=""></form></h2>
+            <form [formGroup]="depositForm" action="" class="'p-5" (ngSubmit)="deposit()">
+
+                <!--acno-->
+                <div class="m-3">
+                    <input formControlName="acno" name="acno" class="form-control" type="text"
+                    placeholder="Account number">
+                    <div *ngIf="this.depositForm.get('acno')?.touched&&this.depositForm.get('acno')?.errors"
+                    style="color:red ;">
+                        Invalid Account number
+                    </div><br>
+                </div>
+                <div class="m-3">
+                    <input formControlName="pswd" type="password" name="pswd" class="form-control" placeholder="password"><br>
+                     <div *ngIf="this.depositForm.get('pswd')?.touched&&this.depositForm.get('pswd')?.errors"
+                    style="color:red ;">
+                    Invalid Password
+                </div><br>
+                <div class="">
+                    <input formControlName="amount" name="amount" class="form-control" type="text"
+                    placeholder="Amount please">
+                    <div *ngIf="this.depositForm.get('amount')?.touched&&this.depositForm.get('amount')?.errors"
+                    style="color:red ;">
+                        Invalid Amount
+                    </div><br>
+                </div>
+                </div>
+                <button class="m-3 btn btn-primary">Deposit</button>
+            </form>
+
+        </div>
+
+    </div>
+    <div class="col-6">
+        <div [ngClass]="acno?'c1':'' " class="border container w-50 m-5">
+            <h2 class="text-center text-primary">Withdraw <form action=""></form></h2>
+            <form [formGroup]="withdrawForm" action="" class="'p-5" (ngSubmit)="withdraw()">
+
+                <!--acno-->
+                <div class="m-3">
+                    <input formControlName="acno" name="acno" class="form-control" type="text"
+                    placeholder="Account number">
+                    <div *ngIf="this.withdrawForm.get('acno')?.touched&&this.withdrawForm.get('acno')?.errors"
+                    style="color:red ;">
+                        Invalid Account number
+                    </div><br>
+                </div>
+                <div class="m-3">
+                    <input formControlName="pswd"  type="password" name="pswd" class="form-control" placeholder="password">
+                     <div *ngIf="this.withdrawForm.get('pswd')?.touched&&this.withdrawForm.get('pswd')?.errors"
+                    style="color:red ;">
+                    Invalid Password
+                </div><br><br>
+                <div class="">
+                    <input formControlName="amount" name="amount" class="form-control" type="text"
+                    placeholder="Amount please">
+                    <div *ngIf="this.withdrawForm.get('amount')?.touched&&this.withdrawForm.get('amount')?.errors"
+                    style="color:red ;">
+                        Invalid Amount
+                    </div><br>
+                </div>
+                </div>
+                <button class="m-3 btn btn-primary">Withdraw</button>
+            </form>
+
+        </div>
+
+    </div>
+</div>
